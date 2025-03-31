@@ -11,7 +11,7 @@ def exercice(valeur):
         for i in range(valeur):
             etoiles += '*'
         etoiles += '<br>'
-    return etoiles
+    return etoiles #Comm
 
 if __name__ == "__main__":
   app.run(debug=True) 
