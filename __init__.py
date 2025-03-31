@@ -9,9 +9,11 @@ def exercice(valeur):
     etoiles = ''
     for j in range(valeur):
         for i in range(valeur):
-            etoiles += '*'
+            etoiles += ('*' * valeur)
         etoiles += '<br>'
     return etoiles
+
+
 
 if __name__ == "__main__":
   app.run(debug=True) 
