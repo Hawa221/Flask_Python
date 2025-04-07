@@ -1,20 +1,19 @@
 from flask import Flask
-from flask import render_template
-from flask import json                                                                                                                                     
-app = Flask(__name__)                                                                                                                  
+from flask import rendertemplate
+from flask import json
 
+app = Flask(name)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    pyramide = ''
-    for i in range(1, valeur + 1):
-        pyramide += '&nbsp;' * (valeur - i)
-        for j in range(1, i + 1):
-            pyramide += str(j)
-        for j in range(i - 1, 0, -1):
-            pyramide += str(j)
-        pyramide += '<br>'
-    return pyramide
-      
-if __name__ == "__main__":
-  app.run(debug=True)
+    a, b = 0, 1
+    sequence = [a, b]
+    for  in range(2, valeur):
+        a, b = b, a + b
+        sequence.append(b)
+
+    fibonacci = '<pre>' + ', '.join(map(str, sequence)) + '</pre>'
+    return fibonacci
+
+if name == "main":
+    app.run(debug=True)
