@@ -3,16 +3,17 @@ from flask import render_template
 from flask import json                                                                                                                                     
 app = Flask(__name__)                                                                                                                  
 
-@app.route('/<int:valeur>')
-def exercice(valeur):
-    a, b = 0, 1
-    sequence = [a, b]
-    for _ in range(2, valeur):
-        a, b = b, a + b
-        sequence.append(b)
-
-    fibonacci = '<pre>' + ', '.join(map(str, sequence)) + '</pre>'
-    return fibonacci
+@app.route('/somme/<int:n>')
+def calcul_somme(n):
+    somme = 0
+    for i in range(1, n + 1):
+        if i % 11 == 0:
+            continue  
+        if i % 5 == 0 or i % 7 == 0:
+            somme += i
+        if somme > 5000:
+            break  
+    return f"La somme finale est : {somme}"
 
 if __name__ == "__main__":
     app.run(debug=True)
