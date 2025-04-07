@@ -8,10 +8,10 @@ app = Flask(__name__)
 def exercice(valeur):
     chiffre = ''
     for j in range(valeur):
-        for i in range(1, 1+i):
-            chiffre += '1;1+i'   
-        for k in range(i;i-1):
-            chiffre += 'i,i-1'
+        for i in range(1,j+2):
+            chiffre += str(i)
+        for i in range(j, 0, -1);
+            chiffre += str(i)
         chiffre += '<br>'
     return chiffre
 if __name__ == "__main__":
