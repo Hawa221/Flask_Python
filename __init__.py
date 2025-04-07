@@ -8,12 +8,12 @@ def exercice(valeurs):
     liste_nombres = valeurs.split('/')
     liste_nombres = [int(n) for n in liste_nombres]
     
-    max_valeur = liste_nombres[0]
+    min_valeur = liste_nombres[0]
     for n in liste_nombres:
-        if n > max_valeur:
-            max_valeur = n
+        if n < min_valeur:
+            min_valeur = n
 
-    return str(max_valeur)
+    return str(min_valeur)
 
 if __name__ == '__main__':
     app.run(debug=True)
