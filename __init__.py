@@ -3,15 +3,20 @@ from flask import render_template
 from flask import json                                                                                                                                     
 app = Flask(__name__)                                                                                                                  
 
-@app.route('/<path:valeurs>')
-def exercice(valeurs):
-    liste_nombres = valeurs.split('/')
-    liste_nombres = [int(n) for n in liste_nombres]
-    resultat = 0
-    for n in liste_nombres:
-        resultat = resultat + n
-    return str(resultat)
+@app.route('/max', methods=['POST'])
+def trouver_max():
+    data = request.form['valeurs']
+    try:
+        liste = [int(x.strip()) for x in data.split(',')]
+    except ValueError:
+        return "Erreur : veuillez entrer uniquement des nombres séparés par des virgules."
+        
+    max_val = None
+    for val in liste:
+        if max_val is None or val > max_val:
+            max_val = val
+
+    return f"La valeur maximale est : {max_val}"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
-
+    app.run(debug=True)
