@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    chiffre = ''
+   int = ''
     for j in range(valeur):
         for i in range(1,j+2):
-            chiffre += str(i)
+            int += str(i)
         for i in range(j, 0, -1);
-            chiffre += str(i)
-        chiffre += '<br>'
-    return chiffre
+            int += str(i)
+        int += '<br>'
+    return int
 if __name__ == "__main__":
   app.run(debug=True)
