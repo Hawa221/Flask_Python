@@ -1,8 +1,7 @@
 from flask import Flask
-from flask import rendertemplate
-from flask import json
-
-app = Flask(name)
+from flask import render_template
+from flask import json                                                                                                                                     
+app = Flask(__name__)                                                                                                                  
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
@@ -15,5 +14,5 @@ def exercice(valeur):
     fibonacci = '<pre>' + ', '.join(map(str, sequence)) + '</pre>'
     return fibonacci
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug=True)
